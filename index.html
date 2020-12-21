@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>OpenLibra API</title>
+        <meta charset="UTF-8" />
+        <link
+            rel="shortcut icon"
+            href="https://img.icons8.com/nolan/64/book.png"
+            type="image/png"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!--Angular JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.8.2/angular-sanitize.js"></script>
+        <script src="./app.js"></script>
+
+        <!--Uikit CSS-->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/uikit@3.5.15/dist/css/uikit.min.css"
+        />
+
+        <!--Less CSS-->
+        <link rel="stylesheet/less" type="text/css" href="styles.less" />
+        <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
+
+        <!-- No caché -->
+        <meta http-equiv="Expires" content="0" />
+        <meta http-equiv="Last-Modified" content="0" />
+        <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+    </head>
+    <body ng-app="my-app" ng-controller="myFun">
+        <div class="uk-container-xsmall title-container">
+            <img src="" alt="" uk-cover />
+            <p class="uk-heading-medium">OpenLibra API</p>
+        </div>
+
+        <div ng-repeat="item in data" class="uk-container uk-container-xsmall">
+            <img src="{{item.thumbnail}}" />
+            <h2>{{item.title}}</h2>
+            <h4>{{item.author}}</h4>
+            <p ng-bind-html="item.content"></p>
+        </div>
+    </body>
+</html>
